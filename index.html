@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ToDo-App</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <h1>Check It Off</h1>
+  <form action="" method="post" name="addItem">
+    <label for="">New Item</label>
+    <input type="text" name="newItem" id="newItem">
+    <button type="submit" name="submitBtn">Submit</button>
+  </form>
+  <ul id="todoList"></ul>
+  <ul id="doneList"></ul>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
