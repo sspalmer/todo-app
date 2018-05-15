@@ -18,15 +18,27 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
     todoArray.push(newItem);
      console.log(todoArray);
         let item =  document.createElement('li');
-          item.textContent = newItem;
 
         let checkbox = document.createElement('input');
           checkbox.setAttribute('type', 'checkbox');
           item.appendChild(checkbox);
+          checkbox.addEventListener('change', e => {
+            e.preventDefault();
+            todoList.removeChild(e.target.parentNode);
+            doneList.appendChild(item);
+          });
+
+        let label = document.createElement('label');
+          label.textContent = newItem;
+          item.appendChild(label);
 
         let editBtn = document.createElement('button');
           editBtn.textContent = 'edit';
           item.appendChild(editBtn);
+          editBtn.addEventListener('click', e => {
+            e.preventDefault();
+            label.textContent  = prompt("", label.textContent);
+          });
 
         let deleteBtn = document.createElement('button');
           deleteBtn.textContent = 'delete';
@@ -35,7 +47,7 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
             e.preventDefault();
             console.log(e.target.parentNode);
             todoList.removeChild(e.target.parentNode);
-          })
+          });
 
           todoList.appendChild(item);
 
