@@ -17,19 +17,12 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
   if (newItem !== "") {
     todoArray.push(newItem);
      console.log(todoArray);
-
-     for (i = 0; i <= todoArray.length - 1; i++) {
-        let item =  document.createElement('form');
-          item.id = 'item' + [i];
+        let item =  document.createElement('li');
+          item.textContent = newItem;
 
         let checkbox = document.createElement('input');
           checkbox.setAttribute('type', 'checkbox');
           item.appendChild(checkbox);
-          //checkbox.addEventListener();
-
-        let task = document.createElement('label');
-          task.textContent = newItem;
-          item.appendChild(task);
 
         let editBtn = document.createElement('button');
           editBtn.textContent = 'edit';
@@ -38,10 +31,24 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
         let deleteBtn = document.createElement('button');
           deleteBtn.textContent = 'delete';
           item.appendChild(deleteBtn);
+          deleteBtn.addEventListener('click', e => {
+            e.preventDefault();
+            console.log(e.target.parentNode);
+            todoList.removeChild(e.target.parentNode);
+          })
 
           todoList.appendChild(item);
-      }; //for loop
 
     form.reset();
 }; //if loop
 }); //submitBtn click
+
+
+
+///  random notes that might be useful
+// for(let i = 0; i < data.results.length; i++) {
+//   console.log(data.results[i].email)
+//   let h2 = document.createElement('h2');
+//   h2.textContent = data.results[i].email;
+//   body.appendChild(h2);
+// }
