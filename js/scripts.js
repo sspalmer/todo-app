@@ -1,13 +1,8 @@
-// Access the input's value and the uls using DOM methods and store them in variables.
-// When the submit button is clicked get the user input and add it to an array.
-// Use whatever visual framework (or plain CSS styling) you like to make your page look good. Treat this like a product that you are building for a client. How would they want it to look and function?
+// FIRST SET OF TODO LIST USING DOM AND target.parentNode
 
 const form = document.getElementById('userInputForm')
 const todoList = document.querySelector('ul#todoList');
 const doneList = document.querySelector('ul#doneList');
-
-let todoArray = [];
-let doneArray = [];
 
 
 document.forms.userInputForm.submitBtn.addEventListener('click', e => {
@@ -15,47 +10,48 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
   let newItem = document.forms.userInputForm.userInputItem.value;
 
   if (newItem !== "") {
-    todoArray.push(newItem);
-     console.log(todoArray);
-        let item =  document.createElement('li');
 
-        let checkbox = document.createElement('input');
-          checkbox.setAttribute('type', 'checkbox');
-          item.appendChild(checkbox);
-          checkbox.addEventListener('change', e => {
-            e.preventDefault();
-            todoList.removeChild(e.target.parentNode);
-            doneList.appendChild(item);
-          });
+    let item =  document.createElement('li');
 
-        let label = document.createElement('label');
-          label.textContent = newItem;
-          item.appendChild(label);
+    let checkbox = document.createElement('input');
+      checkbox.setAttribute('type', 'checkbox');
+      item.appendChild(checkbox);
+      checkbox.addEventListener('change', e => {
+        e.preventDefault();
+        if (e.parentNode = 'ul#todoList') {
+          todoList.removeChild(e.target.parentNode);
+          doneList.appendChild(item);
+        };
+      });
 
-        let editBtn = document.createElement('button');
-          editBtn.textContent = 'edit';
-          item.appendChild(editBtn);
-          editBtn.addEventListener('click', e => {
-            e.preventDefault();
-            label.textContent  = prompt("", label.textContent);
-          });
+    let label = document.createElement('label');
+      label.textContent = newItem;
+      item.appendChild(label);
 
-        let deleteBtn = document.createElement('button');
-          deleteBtn.textContent = 'delete';
-          item.appendChild(deleteBtn);
-          deleteBtn.addEventListener('click', e => {
-            e.preventDefault();
-            console.log(e.target.parentNode);
-            todoList.removeChild(e.target.parentNode);
-          });
+    let editBtn = document.createElement('button');
+      editBtn.textContent = 'edit';
+      item.appendChild(editBtn);
+      editBtn.addEventListener('click', e => {
+        e.preventDefault();
+        label.textContent  = prompt("", label.textContent);
+      });
 
-          todoList.appendChild(item);
+    let deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'delete';
+      item.appendChild(deleteBtn);
+      deleteBtn.addEventListener('click', e => {
+        e.preventDefault();
+        console.log(e.target.parentNode);
+        todoList.removeChild(e.target.parentNode);
+      });
 
+    todoList.appendChild(item);
     form.reset();
-}; //if loop
+  }; //if loop
 }); //submitBtn click
 
 
+// SECOND SENT OF TODO LIST USING Arrays
 
 ///  random notes that might be useful
 // for(let i = 0; i < data.results.length; i++) {
@@ -64,3 +60,14 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
 //   h2.textContent = data.results[i].email;
 //   body.appendChild(h2);
 // }
+
+
+const form2 = document.getElementById('userInputForm2')
+const todoList2 = document.querySelector('ul#todoList2');
+const doneList2 = document.querySelector('ul#doneList2');
+
+let todoArray2 = [];
+let doneArray2 = [];
+
+todoArray.push(newItem);
+ console.log(todoArray);
