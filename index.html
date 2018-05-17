@@ -9,16 +9,42 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Check It Off</h1>
-  <form action="" method="post" name="addItem" id="addItemForm">
-    <label for="">New Item</label>
-    <input type="text" name="newItem" id="newItem">
+  <!-- **************************** DOM Section ************************************ -->
+
+	<h1 class="">Check It Off</h1>
+
+  <form action="" method="post" name="userInputForm" id="userInputForm">
+    <label for="">New Item (DOM)</label>
+    <input type="text" name="userInputItem" id="userInputItem">
     <button type="submit" name="submitBtn">Submit</button>
   </form>
-  <p>To Do List</p>
+
+  <p>To Do List (DOM)</p>
   <ul id="todoList"></ul>
-  <p>Done List</p>
+  <p>*****************</p>
+  <p>Done List (DOM)</p>
   <ul id="doneList"></ul>
+
+  <p></p>
+  <p></p>
+
+  <!-- **************************** Array Section ************************************ -->
+
+  <!--
+  <h1 class="">Check It Off (2)</h1>
+
+  <form action="" method="post" name="userInputForm2" id="userInputForm2">
+    <label for="">New Item (Array)</label>
+    <input type="text" name="userInputItem2" id="userInputItem2">
+    <button type="submit" name="submitBtn2">Submit</button>
+  </form>
+
+  <p>To Do List (Array)</p>
+  <ul id="todoList2"></ul>
+  <p>*****************</p>
+  <p>Done List (Array)</p>
+  <ul id="doneList2"></ul>
+  -->
 
   <script src="js/scripts.js"></script>
 </body>
