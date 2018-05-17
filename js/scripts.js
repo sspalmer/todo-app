@@ -16,7 +16,7 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
     let checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       item.appendChild(checkbox);
-      checkbox.addEventListener('change', e => {
+      checkbox.addEventListener('changed', e => {
         e.preventDefault();
         if (e.parentNode = 'ul#todoList') {
           todoList.removeChild(e.target.parentNode);
@@ -62,12 +62,23 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
 // }
 
 
-const form2 = document.getElementById('userInputForm2')
-const todoList2 = document.querySelector('ul#todoList2');
-const doneList2 = document.querySelector('ul#doneList2');
-
-let todoArray2 = [];
-let doneArray2 = [];
-
-todoArray.push(newItem);
- console.log(todoArray);
+// const form2 = document.getElementById('userInputForm2')
+// const todoList2 = document.querySelector('ul#todoList2');
+// const doneList2 = document.querySelector('ul#doneList2');
+//
+// let todoArray2 = [];
+// let doneArray2 = [];
+//
+// //todoArray.push(newItem);
+//  //console.log(todoArray);
+//
+// var task = {
+//   this.checkbox2 = new Checkbox();
+//   this.label2 = new Label();
+//   this.editBtn2 = new EditBtn();
+//   this.deleteBtn2 = new DeleteBtn();
+// }
+//
+//  for(let q = 0; q < todoArray2.length; q++) {
+//    console.log
+//  }
