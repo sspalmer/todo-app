@@ -16,7 +16,7 @@ document.forms.userInputForm.submitBtn.addEventListener('click', e => {
     let checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       item.appendChild(checkbox);
-      checkbox.addEventListener('changed', e => {
+      checkbox.addEventListener('change', e => {
         e.preventDefault();
         if (e.parentNode = 'ul#todoList') {
           todoList.removeChild(e.target.parentNode);
